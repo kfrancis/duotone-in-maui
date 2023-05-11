@@ -27,3 +27,5 @@ To run the sample, download the pro for web package and place the duotone font f
 - [x] Basic DuoTone Control
 - [ ] Animation
 - [ ] Opacity Swap Property
+- [ ] Support Brushes (Gradients?)
+- [ ] DuoTone Button with Icon
