@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/src/CommunityFA.Controls.SampleViewer/Resources/Fonts/fa-duotone-900.ttf

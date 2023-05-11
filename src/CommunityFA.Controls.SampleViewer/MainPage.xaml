@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="CommunityFA.Controls.SampleViewer.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:CommunityFA.Controls;assembly=CommunityFA.Controls"
+    xmlns:fa="clr-namespace:FontAwesome;assembly=CommunityFA.Controls">
+    <ContentPage.Resources>
+        <x:Double x:Key="IconSize">32</x:Double>
+        <LinearGradientBrush x:Key="GradientBorder" StartPoint="0.5,0" EndPoint="0.5,1">
+            <GradientStop Color="#FF3C496C" />
+            <GradientStop Offset="1" Color="#FF767E9F" />
+        </LinearGradientBrush>
+    </ContentPage.Resources>
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            HorizontalOptions="Center"
+            Spacing="25"
+            VerticalOptions="Center">
+
+            <!--  https://fontawesome.com/docs/web/style/duotone#basic-use  -->
+            <Label Text="Basic Use" />
+            <HorizontalStackLayout Spacing="10">
+                <controls:DuoToneIcon Icon="{x:Static fa:FontAwesomeIcons.Camera}" IconSize="{StaticResource IconSize}" />
+                <controls:DuoToneIcon Icon="{x:Static fa:FontAwesomeIcons.FireFlameCurved}" IconSize="{StaticResource IconSize}" />
+                <controls:DuoToneIcon Icon="{x:Static fa:FontAwesomeIcons.BusSimple}" IconSize="{StaticResource IconSize}" />
+                <controls:DuoToneIcon Icon="{x:Static fa:FontAwesomeIcons.FillDrip}" IconSize="{StaticResource IconSize}" />
+            </HorizontalStackLayout>
+
+            <!--  https://fontawesome.com/docs/web/style/duotone#changing-opacity  -->
+            <Label Text="Changing Opacity" />
+            <HorizontalStackLayout Spacing="10">
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    SecondaryOpacity=".2" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    SecondaryOpacity=".4" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    SecondaryOpacity=".6" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    SecondaryOpacity=".8" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    SecondaryOpacity="1" />
+
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryOpacity=".2" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryOpacity=".4" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryOpacity=".6" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryOpacity=".8" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryOpacity="1" />
+
+            </HorizontalStackLayout>
+
+            <!--  https://fontawesome.com/docs/web/style/duotone#coloring-duotone-icons  -->
+            <Label Text="Coloring Duotone Icons" />
+            <HorizontalStackLayout Spacing="10">
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="Gold" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BusSimple}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="OrangeRed" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.FillDrip}"
+                    IconSize="{StaticResource IconSize}"
+                    SecondaryColor="LimeGreen"
+                    SecondaryOpacity=".6" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.FillDrip}"
+                    IconSize="{StaticResource IconSize}"
+                    SecondaryColor="MediumPurple"
+                    SecondaryOpacity=".6" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BatteryFull}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="LimeGreen"
+                    PrimaryOpacity="1" />
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BatteryQuarter}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="Orange"
+                    PrimaryOpacity="1" />
+            </HorizontalStackLayout>
+
+            <!--  https://fontawesome.com/docs/web/style/duotone#use-color-to-highlight-a-part-of-an-icon-or-to-note-status  -->
+            <Label Text="Advanced Use" />
+            <HorizontalStackLayout Spacing="10">
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.Book}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="LightSeaGreen"
+                    SecondaryColor="Linen"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BookSparkles}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="MediumPurple"
+                    SecondaryColor="Linen"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BookMedical}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="Crimson"
+                    SecondaryColor="Linen"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.BookUser}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="Peru"
+                    SecondaryColor="Linen"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.ToggleOff}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="White"
+                    SecondaryColor="Gray"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.ToggleOn}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="DodgerBlue"
+                    SecondaryColor="White"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.FilePlus}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="White"
+                    SecondaryColor="LimeGreen"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.FileExclamation}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="White"
+                    SecondaryColor="Gold"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.FileXmark}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="White"
+                    SecondaryColor="Tomato"
+                    SecondaryOpacity="1" />
+            </HorizontalStackLayout>
+
+            <!--  https://fontawesome.com/docs/web/style/duotone#create-full-color-icons-that-look-like-illustrations  -->
+            <Label Text="Create Full-Color Icons that Look Like Illustrations" />
+            <HorizontalStackLayout Spacing="10">
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.Crow}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="DodgerBlue"
+                    SecondaryColor="Gold"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.Campfire}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="Sienna"
+                    SecondaryColor="Red"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    x:Name="cake"
+                    Icon="{x:Static fa:FontAwesomeIcons.CakeCandles}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="Pink"
+                    SecondaryColor="PaleVioletRed"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.Ear}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="SandyBrown"
+                    SecondaryColor="Bisque"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.Corn}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="MediumSeaGreen"
+                    SecondaryColor="Gold"
+                    SecondaryOpacity="1" />
+
+                <controls:DuoToneIcon
+                    Icon="{x:Static fa:FontAwesomeIcons.CookieBite}"
+                    IconSize="{StaticResource IconSize}"
+                    PrimaryColor="SaddleBrown"
+                    SecondaryColor="BurlyWood"
+                    SecondaryOpacity="1" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

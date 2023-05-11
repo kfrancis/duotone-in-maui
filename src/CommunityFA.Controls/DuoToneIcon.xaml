@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="CommunityFA.Controls.DuoToneIcon"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://schemas.microsoft.com/dotnet/2021/maui/design"
+    xmlns:local="clr-namespace:CommunityFA.Controls"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="root"
+    mc:Ignorable="d">
+    <ContentView.Content>
+        <Grid>
+            <Label
+                x:Name="SecondaryLabel"
+                FontFamily="FontAwesomeDuotone"
+                FontSize="{Binding IconSize, Source={x:Reference root}}"
+                HorizontalTextAlignment="{Binding HorizontalIconAlignment, Source={x:Reference root}}"
+                Opacity="{Binding SecondaryOpacity, Source={x:Reference root}}"
+                Text="{Binding SecondaryText, Source={x:Reference root}}"
+                TextColor="{Binding SecondaryColor, Source={x:Reference root}}"
+                VerticalTextAlignment="{Binding VerticalIconAlignment, Source={x:Reference root}}"
+                ZIndex="1" />
+            <Label
+                x:Name="PrimaryLabel"
+                FontFamily="FontAwesomeDuotone"
+                FontSize="{Binding IconSize, Source={x:Reference root}}"
+                HorizontalTextAlignment="{Binding HorizontalIconAlignment, Source={x:Reference root}}"
+                Opacity="{Binding PrimaryOpacity, Source={x:Reference root}}"
+                Text="{Binding PrimaryText, Source={x:Reference root}}"
+                TextColor="{Binding PrimaryColor, Source={x:Reference root}}"
+                VerticalTextAlignment="{Binding VerticalIconAlignment, Source={x:Reference root}}"
+                ZIndex="2" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>
