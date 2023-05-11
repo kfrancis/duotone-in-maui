@@ -2,7 +2,8 @@
 Working FontAwesome v6 DuoTone icon in Maui 
 
 ## Adapted from
-https://gist.github.com/tomh4/e3a37f1abba2361ed02c09577dc2f09c
+- General idea: https://gist.github.com/tomh4/e3a37f1abba2361ed02c09577dc2f09c
+- FontAwesomeIcons.cs https://github.com/matthewrdev/fa2cs
 
 ## Usage
 ```csharp
