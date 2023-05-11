@@ -27,7 +27,6 @@ public partial class DuoToneIcon : ContentView
     [BindableProp(PropertyChangedDelegate = nameof(OnSecondaryOpacityPropertyChanged))]
     private double _secondaryOpacity = 0.4d;
 
-
     [BindableProp(PropertyChangedDelegate = nameof(OnVerticalIconAlignmentPropertyChanged))]
     private TextAlignment _verticalIconAlignment = TextAlignment.Start;
 
