@@ -1,4 +1,5 @@
 ﻿using BindableProps;
+using CommunityFA.Controls.Helpers;
 using FontAwesome;
 using System.Globalization;
 
@@ -8,6 +9,24 @@ public partial class DuoToneIcon : ContentView
 {
     [BindableProp(PropertyChangedDelegate = nameof(OnHorizontalIconAlignmentPropertyChanged))]
     private TextAlignment _horizontalIconAlignment = TextAlignment.Start;
+
+    //[BindableProp(PropertyChangedDelegate = nameof(OnEncodingStylePropertyChanged))]
+    private EncodingStyle _encoding = EncodingStyle.Unicode;
+
+    //private static void OnEncodingStylePropertyChanged(BindableObject bindable, object oldValue, object newValue)
+    //{
+    //    if (bindable is DuoToneIcon control)
+    //    {
+    //        control.Encoding = (EncodingStyle)newValue;
+    //        OnIconPropertyChanged(bindable, control.Icon, control.Icon);
+    //    }
+    //}
+
+    public enum EncodingStyle
+    {
+        Unicode,
+        IconName
+    }
 
     [BindableProp(PropertyChangedDelegate = nameof(OnIconPropertyChanged))]
     private string _icon = FontAwesomeIcons.BlockQuestion;
@@ -35,9 +54,11 @@ public partial class DuoToneIcon : ContentView
         InitializeComponent();
     }
 
-    public string PrimaryText => Icon;
+    internal string IconText { get; set; }
 
-    public string SecondaryText => Icon + Icon; // This is the trick that let's us specifically target the second ligature
+    public string PrimaryText => _encoding == EncodingStyle.Unicode ? Icon : (DescriptionHelper.GetUnicodeValueByDescription(Icon) ?? "?");
+
+    public string SecondaryText => _encoding == EncodingStyle.Unicode ? $"{Icon}{Icon}" : (DescriptionHelper.GetUnicodeValueByDescription(Icon) + DescriptionHelper.GetUnicodeValueByDescription(Icon) ?? "?"); // This is the trick that let's us specifically target the second ligature
 
     private static void OnHorizontalIconAlignmentPropertyChanged(BindableObject bindable, object oldValue, object newValue)
     {
@@ -52,7 +73,20 @@ public partial class DuoToneIcon : ContentView
     {
         if (bindable is DuoToneIcon control)
         {
-            control.PrimaryLabel.Text = UnicodeToCharacter(newValue.ToString());
+            //var reverse = false;
+            //if (control.Encoding == EncodingStyle.Unicode && newValue.ToString().Any(c => c > 255))
+            //{
+            //    control.IconText = DescriptionHelper.GetDescriptionByUnicodeValue(newValue.ToString());
+            //}
+            //else
+            //{
+            //    reverse = true;
+            //    control.IconText = newValue.ToString();
+            //}
+
+            //control.PrimaryLabel.Text = control.Encoding == EncodingStyle.Unicode ? UnicodeToCharacter(newValue.ToString()) : UnicodeToCharacter(DescriptionHelper.GetUnicodeValueByDescription(control.IconText));
+            //control.SecondaryLabel.Text = control.Encoding == EncodingStyle.Unicode ? UnicodeToCharacter(newValue.ToString()) + UnicodeToCharacter(newValue.ToString()) : UnicodeToCharacter(DescriptionHelper.GetUnicodeValueByDescription(control.IconText)) + UnicodeToCharacter(DescriptionHelper.GetUnicodeValueByDescription(control.IconText)); // This is the trick that let's us specifically target the second ligature
+            control.PrimaryLabel.Text =  UnicodeToCharacter(newValue.ToString());
             control.SecondaryLabel.Text = UnicodeToCharacter(newValue.ToString()) + UnicodeToCharacter(newValue.ToString()); // This is the trick that let's us specifically target the second ligature
         }
     }

@@ -13,7 +13,7 @@ namespace CommunityFA.Controls.SampleViewer
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-                    fonts.AddFont("fa-duotone-900.ttf", "FontAwesomeDuotone");
+                    fonts.AddFont("fa-duotone-900.otf", "FontAwesomeDuotone");
                 });
 
 #if DEBUG

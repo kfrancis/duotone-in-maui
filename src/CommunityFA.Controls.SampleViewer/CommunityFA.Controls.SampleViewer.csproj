@@ -49,6 +49,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Fonts\fa-duotone-900.otf" />
 	  <None Remove="Resources\Fonts\fa-duotone-900.ttf" />
 	</ItemGroup>
 
