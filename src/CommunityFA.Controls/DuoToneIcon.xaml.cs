@@ -13,6 +13,19 @@ public partial class DuoToneIcon : ContentView
     //[BindableProp(PropertyChangedDelegate = nameof(OnEncodingStylePropertyChanged))]
     private EncodingStyle _encoding = EncodingStyle.Unicode;
 
+    [BindableProp(PropertyChangedDelegate = nameof(OnFontFamilyPropertyChanged))]
+    private string _fontFamily = Constants.FontFamily;
+
+    private static void OnFontFamilyPropertyChanged(BindableObject bindable, object oldValue, object newValue)
+    {
+        if (bindable is DuoToneIcon control)
+        {
+            control.FontFamily = newValue.ToString();
+            control.PrimaryLabel.FontFamily = control.FontFamily;
+            control.SecondaryLabel.FontFamily = control.FontFamily;
+        }
+    }
+
     //private static void OnEncodingStylePropertyChanged(BindableObject bindable, object oldValue, object newValue)
     //{
     //    if (bindable is DuoToneIcon control)
@@ -35,7 +48,7 @@ public partial class DuoToneIcon : ContentView
     private double _iconSize = 12d;
 
     [BindableProp(PropertyChangedDelegate = nameof(OnPrimaryColorPropertyChanged))]
-    private Color _primaryColor = Color.FromArgb("FF183153");
+    private Color _primaryColor = Color.FromArgb(Constants.DefaultPrimaryColour);
 
     [BindableProp(PropertyChangedDelegate = nameof(OnPrimaryOpacityPropertyChanged))]
     private double _primaryOpacity = 1d;
@@ -54,7 +67,7 @@ public partial class DuoToneIcon : ContentView
         InitializeComponent();
     }
 
-    internal string IconText { get; set; }
+    internal string IconText { get; set; } = string.Empty;
 
     public string PrimaryText => _encoding == EncodingStyle.Unicode ? Icon : (DescriptionHelper.GetUnicodeValueByDescription(Icon) ?? "?");
 

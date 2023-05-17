@@ -8,6 +8,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     x:Name="root"
     mc:Ignorable="d">
+    <ContentView.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontFamily" Value="{Binding FontFamily, Source={x:Reference root}}"/>
+        </Style>
+    </ContentView.Resources>
     <ContentView.Content>
         <Grid>
             <Label
